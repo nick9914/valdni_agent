@@ -4,7 +4,7 @@ import numpy as np
 import os
 from contributed_traders.util import get_file
 
-class SimpleAgent(TradingAgent):
+class valdni_agentHelloWorld(TradingAgent):
     """
     Simple Trading Agent that compares the past mid-price observations and places a
     buy limit order if the first window mid-price exponential average >= the second window mid-price exponential average or a
@@ -30,7 +30,7 @@ class SimpleAgent(TradingAgent):
     def kernelStarting(self, startTime):
         super().kernelStarting(startTime)
         # Read in the configuration through util
-        with open(get_file('valdni_agentHelloWorld.cfg'), 'r') as f:
+        with open(get_file('valdni_agentHelloWorld/valdni_agentHelloWorld.cfg'), 'r') as f:
             self.window1, self.window2 = [int(w) for w in f.readline().split()]
         #print(f"{self.window1} {self.window2}")
 
