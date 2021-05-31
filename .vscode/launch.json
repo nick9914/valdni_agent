@@ -1,0 +1,16 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: ABIDES",
+            "type": "python",
+            "request": "launch",
+            "program": "/Users/nvaldez6/personal_projects/abides/abides.py",
+            "console": "integratedTerminal",
+            "args": ["-u", "abides.py", "-c", "rmsc01", "-l", "rmsc01", "-s", "123456789", "-a", "contributed_traders.SimpleAgent"]
+        }
+    ]
+}
