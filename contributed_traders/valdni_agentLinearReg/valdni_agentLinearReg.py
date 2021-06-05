@@ -49,6 +49,9 @@ class valdni_agentLinearReg(TradingAgent):
         """ Momentum agent actions are determined after obtaining the best bid and ask in the LOB """
         super().receiveMessage(currentTime, msg)
         if self.state == "AWAITING_LAST_TRADE" and msg.body['msg'] == "QUERY_LAST_TRADE":
+            dt = (self.mkt_close - currentTime) / np.timedelta64(1, 'm')
+            if dt < 10:
+                self.dump_shares()
             last = self.last_trade[self.symbol]
             self.trades = (self.trades + [last])[-self.lookback:]
             if len(self.trades) >= self.lookback:
@@ -57,9 +60,11 @@ class valdni_agentLinearReg(TradingAgent):
                 holdings = self.getHoldings(self.symbol)
                 # bid, _, ask, _ = self.getKnownBidAsk(self.symbol)
                 if pred > last:
-                    self.placeLimitOrder(self.symbol, quantity=100 - holdings, is_buy_order=True, limit_price=last + 1)
+                    self.placeLimitOrder(self.symbol, quantity=self.size, is_buy_order=True, limit_price=last + 1)
                 else:
-                    self.placeLimitOrder(self.symbol, quantity=100 + holdings, is_buy_order=False, limit_price=last - 1)
+                    if self.symbol in self.holdings and self.holdings[self.symbol] > 0:
+                        order_size = min(self.size, self.holdings[self.symbol])
+                        self.placeLimitOrder(self.symbol, quantity=order_size, is_buy_order=False, limit_price=last - 1)
             self.setWakeup(currentTime + pd.Timedelta ("1m"))
             self.state = "AWAITING_WAKEUP"
 

@@ -11,3 +11,28 @@ Simulation ending!
 Simulation End Time: 2021-06-05 18:18:50.012505
 Time taken to run simulation: 0:00:59.649423
 ------------------------------------------------------------------------------
+Final holdings for contributed_traders.valdni_agentLinearReg.valdni_agentLinearReg: { JPM: 100, CASH: 53249 }.  Marked to market: 10140849
+Fundamental archival complete.
+Event Queue elapsed: 0 days 00:00:50.232774, messages: 129883, messages per second: 2585.6
+Mean ending value by agent type:
+MarketMakerAgent: 3676910
+ZeroIntelligenceAgent: 246750
+HeuristicBeliefLearningAgent: 225651
+MomentumAgent: -878671
+AgentUnderTest: 140849
+Simulation ending!
+Simulation End Time: 2021-06-05 18:34:15.410817
+Time taken to run simulation: 0:01:03.321872
+-----------------------------------------------------------------------------
+Final holdings for contributed_traders.valdni_agentLinearReg.valdni_agentLinearReg: { JPM: 15, CASH: 8505656 }.  Marked to market: 10019411
+Fundamental archival complete.
+Event Queue elapsed: 0 days 00:05:25.851234, messages: 130946, messages per second: 401.9
+Mean ending value by agent type:
+MarketMakerAgent: 6458269
+ZeroIntelligenceAgent: 234495
+HeuristicBeliefLearningAgent: 130618
+MomentumAgent: -801938
+AgentUnderTest: 19411
+Simulation ending!
+Simulation End Time: 2021-06-05 19:24:21.134709
+Time taken to run simulation: 0:05:40.435769
