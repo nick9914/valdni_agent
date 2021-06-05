@@ -50,10 +50,10 @@ class valdni_agentLinearReg(TradingAgent):
         super().receiveMessage(currentTime, msg)
         if self.state == "AWAITING_LAST_TRADE" and msg.body['msg'] == "QUERY_LAST_TRADE":
             last = self.last_trade[self.symbol]
-            self.trades = (self.trades + [last])[-self.lookback:] #TODO: Verify this is not a bug.
+            self.trades = (self.trades + [last])[-self.lookback:]
             if len(self.trades) >= self.lookback:
                 m,b = np.polyfit(range(len(self.trades)),self.trades,1)
-                pred = (self.lookback + 1) * m + b #TODO: Understand this.. Why are we multiplying by lookback (we want to get predicted price in the future)
+                pred = (self.lookback + 1) * m + b
                 holdings = self.getHoldings(self.symbol)
                 # bid, _, ask, _ = self.getKnownBidAsk(self.symbol)
                 if pred > last:

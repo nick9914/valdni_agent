@@ -1,0 +1,13 @@
+Final holdings for contributed_traders.valdni_agentLinearReg.valdni_agentLinearReg: { JPM: -7134, CASH: 719119051 }.  Marked to market: 2451679
+Fundamental archival complete.
+Event Queue elapsed: 0 days 00:00:46.291702, messages: 128576, messages per second: 2777.5
+Mean ending value by agent type:
+MarketMakerAgent: 4452490
+ZeroIntelligenceAgent: 352307
+HeuristicBeliefLearningAgent: 295369
+MomentumAgent: -955440
+AgentUnderTest: -7548321
+Simulation ending!
+Simulation End Time: 2021-06-05 18:18:50.012505
+Time taken to run simulation: 0:00:59.649423
+------------------------------------------------------------------------------
